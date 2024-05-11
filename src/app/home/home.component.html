@@ -1,0 +1,66 @@
+<main class="home">
+  <div class="container">
+    <form [formGroup]="mortgageForm" (ngSubmit)="onSubmit()">
+      <p-panel header="Mortgage Calculator">
+        <p-floatLabel>
+          <input
+            pInputText
+            id="property-price"
+            type="number"
+            formControlName="propertyPrice"
+          />
+          <label for="property-price">Price of the property</label>
+        </p-floatLabel>
+
+        <p-floatLabel>
+          <input
+            pInputText
+            id="interest-rate"
+            type="number"
+            formControlName="interestRate"
+          />
+          <label for="interest-rate">Annual interest rate</label>
+        </p-floatLabel>
+
+        <p-floatLabel>
+          <input
+            pInputText
+            id="duration"
+            type="number"
+            formControlName="duration"
+          />
+          <label for="duration">Duration in years</label>
+        </p-floatLabel>
+        <ng-template pTemplate="footer">
+          <p-button
+            type="submit"
+            [disabled]="!mortgageForm.valid"
+            [rounded]="true"
+            >Calculate</p-button
+          >
+        </ng-template>
+      </p-panel>
+    </form>
+
+    @if(state.totalAmountPaid) {
+    <p-panel header="Results of calculation">
+      <table>
+        <thead>
+          <th>Down payment</th>
+          <th>Monthly payment</th>
+          <th>Total interest paid</th>
+          <th>Total amount paid</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ state.downPayment }}</td>
+            <td>{{ state.monthlyPayment }}</td>
+            <td>{{ state.totalInterestPaid }}</td>
+            <td>{{ state.totalAmountPaid }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </p-panel>
+    }
+  </div>
+</main>

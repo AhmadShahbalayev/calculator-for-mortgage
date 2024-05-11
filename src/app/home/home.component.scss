@@ -1,0 +1,38 @@
+$base: 4px;
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: $base * 8;
+  flex-wrap: wrap;
+}
+
+:host ::ng-deep {
+  .p-panel-content {
+    padding: $base * 8;
+  }
+
+  .p-float-label {
+    margin-bottom: $base * 8;
+  }
+
+  .p-panel-footer {
+    padding: $base * 3 $base * 8;
+    text-align: right;
+  }
+}
+
+table {
+  th,
+  td {
+    padding: $base * 2;
+  }
+}
