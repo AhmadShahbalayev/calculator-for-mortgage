@@ -1,11 +1,13 @@
 $base: 4px;
+$borderColor: #e5e7eb;
+$backgroundColor: #f9fafb;
 
 .home {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  padding: $base * 8;
 }
 
 .container {
@@ -16,23 +18,34 @@ $base: 4px;
 }
 
 :host ::ng-deep {
-  .p-panel-content {
-    padding: $base * 8;
-  }
-
-  .p-float-label {
+  .p-panel {
     margin-bottom: $base * 8;
   }
 
+  .p-panel-content {
+    padding-top: $base * 2;
+    padding-bottom: $base * 10;
+  }
+
+  .p-float-label {
+    margin-top: $base * 8;
+  }
+
   .p-panel-footer {
-    padding: $base * 3 $base * 8;
+    padding: $base * 3.5 $base * 8;
     text-align: right;
+  }
+
+  th {
+    background: transparent;
   }
 }
 
-table {
-  th,
-  td {
-    padding: $base * 2;
-  }
+.total-paid-amount {
+  margin-top: $base * 4;
+  padding: $base * 4;
+  border: 1px solid $borderColor;
+  border-radius: 6px;
+  background-color: $backgroundColor;
+  font-weight: 700;
 }
