@@ -46,7 +46,7 @@
             type="submit"
             [disabled]="!mortgageForm.valid"
             [rounded]="true"
-            >Calculate</p-button
+            >Calculate loan</p-button
           >
         </ng-template>
       </p-panel>
@@ -55,27 +55,22 @@
     @if (state.paymentSchedule.length > 0) {
     <div>
       <p-panel header="Repayment schedule">
-        <p-table
-          [value]="state.paymentSchedule"
-          [paginator]="true"
-          [rows]="5"
-          [rowsPerPageOptions]="[5, 10]"
-        >
+        <p-table [value]="state.paymentSchedule" [paginator]="true" [rows]="5">
           <ng-template pTemplate="header">
             <tr>
               <th>Month</th>
-              <th>Monthly payment</th>
-              <th>Principal</th>
-              <th>Interest</th>
-              <th>Remaining amount</th>
+              <th>Payment</th>
+              <th class="hide-in-mobile-view">Principal</th>
+              <th class="hide-in-mobile-view">Interest</th>
+              <th>Remaining</th>
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-data>
             <tr>
               <td>{{ data.month }}</td>
               <td>{{ data.monthlyPayment }}</td>
-              <td>{{ data.principalPaid }}</td>
-              <td>{{ data.interestPaid }}</td>
+              <td class="hide-in-mobile-view">{{ data.principalPaid }}</td>
+              <td class="hide-in-mobile-view">{{ data.interestPaid }}</td>
               <td>{{ data.remainingLoan }}</td>
             </tr>
           </ng-template>

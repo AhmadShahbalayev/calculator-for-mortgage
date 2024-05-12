@@ -3,17 +3,15 @@ $borderColor: #e5e7eb;
 $backgroundColor: #f9fafb;
 
 .home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: $base * 8;
+  padding: $base * 2;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: $base * 8;
   flex-wrap: wrap;
+  margin-top: $base * 8;
 }
 
 :host ::ng-deep {
@@ -32,7 +30,7 @@ $backgroundColor: #f9fafb;
 
   .p-panel-footer {
     padding: $base * 3.5 $base * 8;
-    text-align: right;
+    text-align: center;
   }
 
   th {
