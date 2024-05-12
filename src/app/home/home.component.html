@@ -9,7 +9,7 @@
             type="number"
             formControlName="downPayment"
           />
-          <label for="down-payment">Down payment amount</label>
+          <label for="down-payment">Down payment</label>
         </p-floatLabel>
 
         <p-floatLabel>
@@ -77,10 +77,19 @@
         </p-table>
       </p-panel>
 
-      <p class="total-paid-amount">
-        {{ state.totalPaidAmount }} = {{ state.totalPaidPrincipal }} (principal)
-        + {{ state.totalPaidInterest }} (interest)
-      </p>
+      <div class="total-paid-amount">
+        <ul>
+          <li>
+            Total principal: <span>{{ state.totalPaidPrincipal }}</span>
+          </li>
+          <li>
+            Total interest: <span>{{ state.totalPaidInterest }}</span>
+          </li>
+          <li>
+            Total amount: <span>{{ state.totalPaidAmount }}</span>
+          </li>
+        </ul>
+      </div>
     </div>
     }
   </div>

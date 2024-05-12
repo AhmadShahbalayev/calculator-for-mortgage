@@ -40,9 +40,20 @@ $backgroundColor: #f9fafb;
 
 .total-paid-amount {
   margin-top: $base * 4;
-  padding: $base * 4;
   border: 1px solid $borderColor;
   border-radius: 6px;
   background-color: $backgroundColor;
-  font-weight: 700;
+
+  ul {
+    padding-left: $base * 5;
+  }
+
+  li {
+    list-style: none;
+    margin: $base 0;
+  }
+
+  span {
+    font-weight: 700;
+  }
 }
